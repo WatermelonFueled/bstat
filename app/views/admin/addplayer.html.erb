@@ -1,0 +1,33 @@
+<%= render 'admin/adminnav' %>
+<h3>New Player</h3>
+<%= form_tag("/admin/saveplayer", method: "post") do %>
+  
+<table class="table">
+<% @Player.each do |play| %>
+   <%= fields_for 'players[]', play do |p| %>
+  <tr>
+    <th>Firstname</th>
+    <td><%= p.text_field :firstname, class: "form-control input-sm" %><td>
+  </tr>
+  <tr>
+    <th>Lastname</th>
+    <td> <%= p.text_field :lastname, class: "form-control input-sm" %><td>
+  </tr>
+  <tr>
+    <th>Number</th>
+    <td><%= p.number_field :number, class: "form-control input-sm" %></td>
+  </tr>
+  <tr>
+    <th>Nickname </th>
+    <td><%= p.text_field :nickname, class: "form-control input-sm" %></td>
+  </tr>
+  <tr>
+    <th>Secret Key</th>
+    <td><%= p.text_field :secretkey, class: "form-control input-sm " %></td>
+    </tr>
+<% end %>
+<% end %>
+</table>
+   </table>
+  <%= submit_tag("Save Player", class: "btn btn-primary") %>
+<% end %>

@@ -1,0 +1,186 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<% @player.each do |player| %>
+<h3><%=player.firstname + ' ' + player.lastname + ' - ' + player.nickname%></h3>
+<% end %>
+<h4>Assessment Results</h4>
+<div class= "table-responsive">
+<table class="table">
+  <tr>
+    <th>Assessment Period</th>
+    <th>Fielding</th>
+    <th>Throwing</th>
+    <th>Hitting</th>
+    <th>Running Speed</th>
+  </tr>
+  <% @assessment.each do |ass| %>
+  <tr>
+    <td><%= ass.time %></td>
+    <td><%= ass.field %></td>
+    <td><%= ass.throw %></td>
+    <td><%= ass.hit %></td>
+    <td><%= ass.speed %></td>
+  </tr>
+  <% end %>
+</table>
+</div>
+
+
+<h4>Official Cumulative Statistics</h4>
+
+<div class= "table-responsive">
+<table class="table">
+  <tr>
+    <th>AVG</th>
+    <th>OBP</th>
+    <th>SLG</th>
+    <th>OPS</th>
+    <th>At Bat</th>
+    <th>Hits</th>
+    <th>Run</th>
+    <th>RBI</th>
+    <th>Total Bases</th>
+  </tr>
+  <tr>
+    <td><%=@AVG%></td>
+    <td><%=@OBP%></td>
+    <td><%=@SLG%></td>
+    <td><%=@OPS%></td>
+    <td><%=@total_atbat%></td>
+    <td><%=@hit%></td>
+    <td><%=@total_run%></td>
+    <td><%=@total_rbi%></td>
+    <td><%=@totalbases%></td>
+  </tr>
+</table>
+</div>
+<p></p>
+<div class= "table-responsive">
+<table class="table">
+  <tr>
+    <th>Game</th>
+    <th>Stolen Base</th>
+    <th>Single</th>
+    <th>Double</th>
+    <th>Triple</th>
+    <th>Homerun</th>
+    <th>Strikeout</th>
+    <th>Error</th>
+    <th>Sac Fly</th>
+    <th>Lineout</th>
+    <th>Groundout</th>
+    <th>Flyout</th>
+    <th>FC</th>
+  </tr>
+  <tr>
+    <td><%=@total_game%></td>
+    <td class="success"><%=@total_sb %></td>
+    <td class="success"><%=@total_single%></td>
+    <td class="success"><%=@total_double%></td>
+    <td class="success"><%=@total_triple%></td>
+    <td class="success"><%=@total_homerun %></td>
+    <td class="danger"><%=@total_strikeout %></td>
+    <td class="danger"><%=@total_error %></td>
+    <td  class="warning"><%=@total_sacfly %></td>
+    <td class="warning"><%=@total_lineout%></td>
+    <td class="warning"><%=@total_groundout%></td>
+    <td class="warning"><%=@total_flyout%></td>
+    <td class="warning"><%=@total_fc%></td>
+  </tr>
+</table>
+</div>
+
+
+<h4>Current Game Statistics</h4>
+<div class= "table-responsive">
+<table class="table sortable table-hover ">
+  <tr>
+    <th>Game</th>
+    <th>At Bat</th>
+    <th>Run</th>
+    <th>RBI</th>
+    <th>Stolen Base</th>
+    <th>Single</th>
+    <th>Double</th>
+    <th>Triple</th>
+    <th>Homerun</th>
+    <th>Strikeout</th>
+    <th>Error</th>
+    <th>Sac Fly</th>
+    <th>Lineout</th>
+    <th>Groundout</th>
+    <th>Flyout</th>
+    <th>FC</th>
+  </tr>
+  <% @game.each do |game| %>
+  <tr>
+    <td><%= game.gamecode %></td>
+    <td><%= game.atbat %></td>
+    <td><%= game.run %></td>
+    <td><%= game.rbi %></td>
+    <td class="success"><%= game.stolenbase %></td>
+    <td class="success"><%= game.single %></td>
+    <td class="success"><%= game.double %></td>
+    <td class="success"><%= game.triple %></td>
+    <td class="success"><%= game.homerun %></td>
+    <td class="danger"><%= game.strikeout %></td>
+    <td class="danger"><%= game.error %></td>
+    <td class="warning"><%= game.sacfly %></td>
+    <td class="warning"><%= game.lineout %></td>
+    <td class="warning"><%= game.groundout %></td>
+    <td class="warning"><%= game.flyout %></td>
+    <td class="warning"><%= game.fc %></td>
+  </tr>
+  <% end %>
+</table>
+
+</div>
+
+<h4>Other Game Statistics</h4>
+<div class= "table-responsive">
+<table class="table table-hover sortable">
+  <tr>
+    <th>Game</th>
+    <th>At Bat</th>
+    <th>Run</th>
+    <th>RBI</th>
+    <th>Stolen Base</th>
+    <th>Single</th>
+    <th>Double</th>
+    <th>Triple</th>
+    <th>Homerun</th>
+    <th>Strikeout</th>
+    <th>Error</th>
+    <th>Sac Fly</th>
+    <th>Lineout</th>
+    <th>Groundout</th>
+    <th>Flyout</th>
+    <th>FC</th>
+  </tr>
+  <% @ngame.each do |game| %>
+  <tr>
+    <td><%= game.gamecode %></td>
+    <td><%= game.atbat %></td>
+    <td><%= game.run %></td>
+    <td><%= game.rbi %></td>
+    <td class="success"> <%= game.stolenbase %></td>
+    <td class="success"><%= game.single %></td>
+    <td class="success"><%= game.double %></td>
+    <td class="success"><%= game.triple %></td>
+    <td class="success"><%= game.homerun %></td>
+    <td class="danger"><%= game.strikeout %></td>
+    <td class="danger"><%= game.error %></td>
+    <td class="warning"><%= game.sacfly %></td>
+    <td class="warning"><%= game.lineout %></td>
+    <td class="warning"><%= game.groundout %></td>
+    <td class="warning"><%= game.flyout %></td>
+    <td class="warning"><%= game.fc %></td>
+  </tr>
+  <% end %>
+</table>
+</div>
+
+

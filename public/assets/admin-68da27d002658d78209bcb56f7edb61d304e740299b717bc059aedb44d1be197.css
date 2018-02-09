@@ -1,0 +1,23 @@
+/* line 6, /Users/andrewleung/bstat/app/assets/stylesheets/admin.scss */
+input {
+  width: 50px;
+  background-color: #f2e6d9;
+  font-family: "Verdana", Sans-serif;
+}
+
+/* line 12, /Users/andrewleung/bstat/app/assets/stylesheets/admin.scss */
+input.team {
+  width: 200px;
+  font-family: "Verdana", Sans-serif;
+}
+
+/* line 17, /Users/andrewleung/bstat/app/assets/stylesheets/admin.scss */
+input[type=submit] {
+  width: 100px;
+  font-family: "Verdana", Sans-serif;
+}
+
+/* line 22, /Users/andrewleung/bstat/app/assets/stylesheets/admin.scss */
+label {
+  font-family: "Verdana", Sans-serif;
+}

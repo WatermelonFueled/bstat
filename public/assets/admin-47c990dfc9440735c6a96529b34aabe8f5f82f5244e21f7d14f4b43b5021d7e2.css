@@ -1,0 +1,9 @@
+/* line 5, /Users/andrewleung/bstat/app/assets/stylesheets/admin.scss */
+.table td {
+  text-align: center;
+}
+
+/* line 9, /Users/andrewleung/bstat/app/assets/stylesheets/admin.scss */
+.table th {
+  text-align: center;
+}

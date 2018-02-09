@@ -1,0 +1,56 @@
+/* line 4, /Users/andrewleung/bstat/app/assets/stylesheets/statsviewer.scss */
+body {
+  background-color: #ecd9c6;
+}
+
+/* line 8, /Users/andrewleung/bstat/app/assets/stylesheets/statsviewer.scss */
+h1 {
+  font-family: "Verdana", Sans-serif;
+}
+
+/* line 11, /Users/andrewleung/bstat/app/assets/stylesheets/statsviewer.scss */
+h2 {
+  font-family: "Verdana", Sans-serif;
+}
+
+/* line 15, /Users/andrewleung/bstat/app/assets/stylesheets/statsviewer.scss */
+h3 {
+  font-family: "Verdana", Sans-serif;
+}
+
+/* line 19, /Users/andrewleung/bstat/app/assets/stylesheets/statsviewer.scss */
+th {
+  border: 1px solid black;
+  font-family: "Verdana", Sans-serif;
+  font-size: 10pt;
+}
+
+/* line 26, /Users/andrewleung/bstat/app/assets/stylesheets/statsviewer.scss */
+td {
+  text-align: center;
+  text-align: center;
+  white-space: nowrap;
+  border-bottom: 1px solid black;
+  font-family: "Verdana", Sans-serif;
+  font-size: 9pt;
+}
+
+/* line 34, /Users/andrewleung/bstat/app/assets/stylesheets/statsviewer.scss */
+td.bad {
+  background-color: #ff9999;
+}
+
+/* line 39, /Users/andrewleung/bstat/app/assets/stylesheets/statsviewer.scss */
+td.good {
+  background-color: #99ff99;
+}
+
+/* line 43, /Users/andrewleung/bstat/app/assets/stylesheets/statsviewer.scss */
+td.neutral {
+  background-color: #ffdd99;
+}
+
+/* line 46, /Users/andrewleung/bstat/app/assets/stylesheets/statsviewer.scss */
+td.title {
+  border-bottom: 0px;
+}

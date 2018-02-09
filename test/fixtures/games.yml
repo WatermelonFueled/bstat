@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  atbat: 1
+  single: 1
+  double: 1
+  triple: 1
+  homerun: 1
+  flyout: 1
+  lineout: 1
+  groundout: 1
+  fc: 1
+
+two:
+  atbat: 1
+  single: 1
+  double: 1
+  triple: 1
+  homerun: 1
+  flyout: 1
+  lineout: 1
+  groundout: 1
+  fc: 1

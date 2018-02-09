@@ -1,0 +1,29 @@
+
+<%= render 'admin/adminnav' %>
+
+<h3>Assessments</h3>
+<div class= "table-responsive">
+<table class = "table">
+  <tr>
+    <th>Assessment Period</th>
+    <th>Player</th>
+    <th>Fielding</th>
+    <th>Throwing</th>
+    <th>Hitting</th>
+    <th>Run Speed</th>
+  </tr>
+  <% @Assessments.each do |a| %>
+  <tr>
+    <td><%= a.time %></td>
+    <td><%= link_to  a.player.firstname + ' ' +a.player.lastname, search_path(:secretkey =>a.player.secretkey) %></td>
+    <td><%= a.field %></td>
+    <td><%= a.throw %></td>
+    <td><%= a.hit %></td>
+    <td><%= a.speed%></td>
+    <td><%= link_to  'Edit', edit_assessment_path(a.id) %>
+    </td>
+    <td><%= link_to "Delete", a, method: :delete, data: { confirm: "You sure?"} %></td>
+  </tr>
+  <% end %>
+</table>
+</div>

@@ -1,0 +1,28 @@
+<%= render 'admin/adminnav' %>
+<h3>Log Assessment Records</h3>
+<%= form_tag("/admin/saveassessments", method: "post") do %>
+  <%= label_tag(:time, "Assessment Period:", class: "sr-only") %>
+  <%= text_field(:time, nil, class: "form-control input-sm", placeholder: "Assessment Period") %>
+  <table class="table table-condensed">
+    <tr>
+      <th>Player</th>
+      <th>Fielding</th>
+      <th>Throwing</th>
+      <th>Hitting</th>
+      <th>Speed</th>
+    </tr>
+    <% @Assessments.each do |ass| %>
+    <%= fields_for 'assessments[]', ass do |a| %>
+    <tr>
+      <td><%= ass.player.firstname + ' ' + ass.player.lastname %></td>
+      <td><%= a.number_field :field, :step =>0.001, class: "form-control input-sm" %></td>
+      <td><%= a.number_field :throw, :step =>0.001, class: "form-control input-sm" %></td>
+      <td><%= a.number_field :hit , :step =>0.001, class: "form-control input-sm" %></td>
+      <td><%= a.number_field :speed , :step =>0.001, class: "form-control input-sm" %></td>
+      <%= a.hidden_field :player_id, :value => ass.player_id %>
+    </tr>
+    <% end %>
+    <% end %>
+   </table>
+  <%= submit_tag("Save Data", class: "btn btn-primary") %>
+<% end %>

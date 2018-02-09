@@ -1,0 +1,24 @@
+/* line 4, /Users/andrewleung/bstat/app/assets/stylesheets/homepage.scss */
+body {
+  background-color: #ecd9c6;
+}
+
+/* line 8, /Users/andrewleung/bstat/app/assets/stylesheets/homepage.scss */
+h1 {
+  font-family: "Verdana", Sans-serif;
+}
+
+/* line 11, /Users/andrewleung/bstat/app/assets/stylesheets/homepage.scss */
+h2 {
+  font-family: "Verdana", Sans-serif;
+}
+
+/* line 15, /Users/andrewleung/bstat/app/assets/stylesheets/homepage.scss */
+h3 {
+  font-family: "Verdana", Sans-serif;
+}
+
+/* line 18, /Users/andrewleung/bstat/app/assets/stylesheets/homepage.scss */
+p {
+  font-family: "Verdana", Sans-serif;
+}

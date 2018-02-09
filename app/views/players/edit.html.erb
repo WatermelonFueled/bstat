@@ -1,0 +1,34 @@
+<%= render 'admin/adminnav' %>
+<h3>Update Player Info</h3>
+<h4 class="text-info">
+  <%= @player.firstname %> <%= @player.lastname %> 
+</h4>
+<%= form_for(@player) do |g| %>
+<table class="table">
+  <tr>
+    <th>Firstname</th>
+    <td><%= g.text_field :firstname, class: "form-control input-sm" %><td>
+  </tr>
+  <tr>
+    <th>Lastname</th>
+    <td> <%= g.text_field :lastname, class: "form-control input-sm" %><td>
+  </tr>
+  <tr>
+    <th>Number</th>
+    <td><%= g.number_field :number, class: "form-control input-sm" %></td>
+  </tr>
+  <tr>
+    <th>Nickname </th>
+    <td><%= g.text_field :nickname, class: "form-control input-sm" %></td>
+  </tr>
+  <tr>
+    <th>Secret Key</th>
+    <td><%= g.text_field :secretkey, class: "form-control input-sm " %></td>
+    </tr>
+
+</table>
+<span>
+  <%= g.submit "Update", class: "btn btn-primary btn-sm" %>
+  <%= link_to "Delete", @game, method: :delete, data: { confirm: "You sure?"}, class: "btn btn-danger btn-sm" %>
+</span>
+<% end %>

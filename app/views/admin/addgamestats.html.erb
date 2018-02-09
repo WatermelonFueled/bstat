@@ -1,0 +1,44 @@
+<%= render 'admin/adminnav' %>
+<div class="row"><h3>Log Game Statistics</h3></div>
+<%= form_tag("/admin/savegamestats", method: "post") do %>
+<div class="row input-group">
+    <%= label_tag(:gamecode, "Versus:", class: "sr-only") %>
+    <%= text_field(:gamecode, nil, class: "form-control input", placeholder: "Versus") %>
+    <span class="input-group-addon">
+      <%= label_tag(:isofficial, "Official? ") %>
+      <%= check_box_tag(:isofficial,1,true) %>
+    </span>
+</div>
+<div class="row">
+  <table class="table table-condensed">
+    <tr>
+      <th>Player Name</th>
+      <%= render 'admin/statsth' %>
+    </tr>
+  <% @Games.each do |game| %>
+    <%= fields_for 'games[]', game do |g| %>
+    <tr>
+      <td><%= game.player.firstname + ' ' + game.player.lastname %></td>
+      <td><%= g.number_field :atbat, min: 0, max: 99, class: "form-control input-sm" %></td>
+      <td><%= g.number_field :run, min: 0, max: 99, class: "form-control input-sm" %></td>
+      <td><%= g.number_field :rbi, min: 0, max: 99, class: "form-control input-sm" %></td>
+      <td><%= g.number_field :stolenbase, min: 0, max: 99, class: "form-control input-sm" %></td>
+      <td><%= g.number_field :single, min: 0, max: 99, class: "form-control input-sm" %></td>
+      <td><%= g.number_field :double, min: 0, max: 99, class: "form-control input-sm" %></td>
+      <td><%= g.number_field :triple, min: 0, max: 99, class: "form-control input-sm" %></td>
+      <td><%= g.number_field :homerun, min: 0, max: 99, class: "form-control input-sm" %></td>
+      <td><%= g.number_field :strikeout, min: 0, max: 99, class: "form-control input-sm" %></td>
+      <td><%= g.number_field :error, min: 0, max: 99, class: "form-control input-sm" %></td>
+      <td><%= g.number_field :sacfly, min: 0, max: 99, class: "form-control input-sm" %></td>
+      <td><%= g.number_field :lineout, min: 0, max: 99, class: "form-control input-sm" %></td>
+      <td><%= g.number_field :groundout, min: 0, max: 99, class: "form-control input-sm" %></td>
+      <td><%= g.number_field :flyout, min: 0, max: 99, class: "form-control input-sm" %></td>
+      <td><%= g.number_field :fc, min: 0, max: 99, class: "form-control input-sm" %></td>
+      <%= g.hidden_field :player_id, :value => game.player_id %>
+    </tr>
+    <% end %>
+  <% end %>
+  </table>
+</div>
+  <%= submit_tag("Save Data", class: "btn btn-primary row") %>
+<% end %>

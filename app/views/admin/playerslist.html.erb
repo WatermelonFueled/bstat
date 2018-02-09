@@ -1,0 +1,24 @@
+<%= render 'admin/adminnav' %>
+
+<%= link_to "New Player", 'addplayer',class: "btn btn-default btn-sm" %>
+
+<div class= "table-responsive">
+<table class = "table table-condensed table-hover sortable">
+  <tr>
+    <th>Name</th>
+    <th>Number</th>
+    <th>Nickname</th>
+    <th>Secretkey</th>
+    
+  </tr>
+  <% @Players.each do |player| %>
+  <tr>
+    <td><%= link_to  player.firstname + ' ' +player.lastname, search_path(:secretkey =>player.secretkey) %></td>
+    <td><%= player.number %></td>
+    <td><%= player.nickname %></td>
+    <td><%= link_to  'Edit', edit_player_path(player.id) %></td>
+    <td><%= link_to "Delete", player, method: :delete, data: { confirm: "You sure?"} %></td>
+  </tr>
+  <% end %>
+</table>
+</div>

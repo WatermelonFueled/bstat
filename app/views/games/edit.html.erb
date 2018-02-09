@@ -1,0 +1,74 @@
+<%= render 'admin/adminnav' %>
+<h3>Update Game Statistics</h3>
+<h4 class="text-info">
+  <%= @player.firstname %> <%= @player.lastname %> VS. <%= @game.gamecode %>
+</h4>
+<%= form_for(@game) do |g| %>
+<table class="table">
+  <tr>
+    <th>At Bat</th>
+    <td><%= g.number_field :atbat, class: "form-control input-sm" %><td>
+  </tr>
+  <tr>
+    <th>Run</th>
+    <td> <%= g.number_field :run, class: "form-control input-sm" %><td>
+  </tr>
+  <tr>
+    <th>RBI</th>
+    <td><%= g.number_field :rbi, class: "form-control input-sm" %></td>
+  </tr>
+  <tr>
+    <th>Stolen Base</th>
+    <td><%= g.number_field :stolenbase, class: "form-control input-sm" %></td>
+  </tr>
+  <tr>
+    <th>Single</th>
+    <td><%= g.number_field :single, class: "form-control input-sm" %><td>
+  </tr>
+  <tr>
+    <th>Double</th>
+    <td><%= g.number_field :double, class: "form-control input-sm" %></td>
+  </tr>
+  <tr>
+    <th>Triple</th>
+    <td> <%= g.number_field :triple, class: "form-control input-sm" %></td>
+  </tr>
+  <tr>
+    <th>Homerun</th>
+    <td><%= g.number_field :homerun, class: "form-control input-sm" %></td>
+  </tr>
+  <tr>
+    <th>Strikeout</th>
+    <td><%= g.number_field :strikeout, class: "form-control input-sm" %></td>
+  </tr>
+  <tr>
+    <th>Flyout</th>
+    <td><%= g.number_field :flyout, class: "form-control input-sm" %></td>
+  </tr>
+  <tr>
+    <th>Lineout</th>
+    <td><%= g.number_field :lineout, class: "form-control input-sm" %></td>
+  </tr>
+  <tr>
+    <th>Groundout</th>
+    <td><%= g.number_field :groundout, class: "form-control input-sm" %></td>
+  </tr>
+  <tr>
+    <th>FC</th>
+    <td><%= g.number_field :fc, class: "form-control input-sm" %></td>
+  </tr>
+  <tr>
+    <th>Sacfly</th>
+    <td><%= g.number_field :sacfly, class: "form-control input-sm" %></td>
+  </tr>
+  <tr>
+    <th>Error</th>
+    <td><%= g.number_field :error, class: "form-control input-sm" %></td>
+  </tr>
+</table>
+  <%= g.hidden_field :player_id, :value => @game.player_id %>
+<span>
+  <%= g.submit "Update", class: "btn btn-primary btn-sm" %>
+  <%= link_to "Delete", @game, method: :delete, data: { confirm: "You sure?"}, class: "btn btn-danger btn-sm" %>
+</span>
+<% end %>

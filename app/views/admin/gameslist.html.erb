@@ -1,0 +1,39 @@
+
+<%= render 'admin/adminnav' %>
+
+<div class= "table-responsive">
+<table class = "table table-condensed table-hover sortable">
+  <tr>
+    <th>Game</th>
+    <%= render 'admin/culstatsth' %>
+  </tr>
+  <% @Games.each do |game| %>
+  <tr>
+    <td><%= link_to  game.gamecode, searchgame_path(:gamecode =>game.gamecode) %></td>
+    <td><%= game.atbat %></td>
+    <td><%= game.hit %></td>
+    <td><%= game.run %></td>
+    <td><%= game.rbi %></td>
+    <td><%= game.totalbases %></td>
+    <td class="success"><%= game.stolenbase %></td>
+    <td class="success"><%= game.single %></td>
+    <td class="success"><%= game.double %></td>
+    <td class="success"><%= game.triple %></td>
+    <td class="success"><%= game.homerun %></td>
+    <td class="warning"><%= game.strikeout %></td>
+    <td class="warning"><%= game.error %></td>
+    <td class="danger"><%= game.sacfly %></td>
+    <td class="danger"><%= game.lineout %></td>
+    <td class="danger"><%= game.groundout %></td>
+    <td class="danger"><%= game.flyout %></td>
+    <td class="danger"><%= game.fc %></td>
+        <td class="warning"><%= game.fss%></td>
+    <td class="warning"><%= game.lgf%></td>
+    <td><%= game.avg %></td>
+    <td><%= game.obp %></td>
+    <td><%= game.slg%></td>
+    <td><%= game.ops%></td>
+  </tr>
+  <% end %>
+</table>
+</div>

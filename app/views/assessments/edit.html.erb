@@ -1,0 +1,37 @@
+<%= stylesheet_link_tag "admin" %>
+
+
+<h1>Update Assessments</h1>
+<h2> <%= @player.firstname %> <%= @player.lastname %></h2>
+<h3> Assessment Time: <%= @assessment.time %></h3>
+<p><%= link_to "Delete", @assessment, method: :delete, data: { confirm: "You sure?"} %> </p>
+
+  <%= form_for(@assessment) do |a| %>
+    <table>
+
+    <tr>
+      <th> Fielding</th>
+      <td> <%= a.number_field :field, :step =>0.001%><td>
+    </tr>
+    <tr>
+      <th> Throwing </th>
+      <td> <%= a.number_field :throw, :step =>0.001%><td>
+    </tr>
+    <tr>
+      <th> Hitting</th>
+      <td><%= a.number_field :hit , :step =>0.001%></td>
+    </tr>
+    <tr>
+      <th> Running Speed </th>
+      <td><%= a.number_field :speed , :step =>0.001%></td>
+    </tr>
+    <tr>
+      <th><%= a.hidden_field :player_id, :value => @assessment.player_id %></th>
+      <td><%= a.submit "Update" %></th>
+    </tr>
+  
+</table>
+  <% end %>
+
+
+

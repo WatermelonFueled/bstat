@@ -1,0 +1,19 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<div class="text-center">
+  <h1>BreadStats</h1><br>
+  <p>
+    <%= form_tag("/search", method: "get", class: "form-inline") do %>
+      <%= label_tag(:secretkey, "Secret Key", class: "sr-only")%>
+      <%= password_field_tag(:secretkey, "", placeholder: "Secret Key", class: "form-control input-lg")%>
+      <%= submit_tag("Submit", class: "btn btn-primary btn-lg")%>
+    <% end %>
+  </p><br>
+  <h4 class="text-muted">
+    Questions? Please contact <strong>gcgcbread</strong> at <strong>gmail</strong> dot <strong>com</strong>
+  </h4>
+  <%= link_to 'Admin', 'admin/masterviewer', class: "btn btn-default btn-xs" %>
+</div>
+

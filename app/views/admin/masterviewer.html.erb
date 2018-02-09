@@ -1,0 +1,39 @@
+
+
+<%= render 'admin/adminnav' %>
+<h3>Overview</h3>
+<div class= "table-responsive">
+<table class="table table-striped table-condensed">
+  <tr>
+    <th>Game</th>
+    <th>Official</th>
+    <th>Player</th>
+    <%= render 'admin/statsth' %>
+    <th colspan="2"></th>
+  </tr>
+  <% @Games.each do |game| %>
+  <tr>
+    <td><%= link_to  game.gamecode, searchgame_path(:gamecode =>game.gamecode) %></td>
+    <td><%= game.isofficial  %></td>
+    <td><%= link_to  game.player.firstname + ' ' +game.player.lastname, search_path(:secretkey =>game.player.secretkey) %></td>
+    <td><%= game.atbat %></td>
+    <td><%= game.run %></td>
+    <td><%= game.rbi %></td>
+    <td class="success"><%= game.stolenbase%></td>
+    <td class="success"><%= game.single %></td>
+    <td class="success"><%= game.double %></td>
+    <td class="success"><%= game.triple %></td>
+    <td class="success"><%= game.homerun %></td>
+    <td class="danger"><%= game.strikeout %></td>
+    <td class="danger"><%= game.error %></td>
+    <td class="warning"><%= game.sacfly %></td>
+    <td class="warning"><%= game.lineout %></td>
+    <td class="warning"><%= game.groundout %></td>
+    <td class="warning"><%= game.flyout %></td>
+    <td class="warning"><%= game.fc %></td>
+    <td><%= link_to  'Edit', edit_game_path(game.id) %></td>
+    <td><%= link_to "Delete", game, method: :delete, data: { confirm: "You sure?"} %></td>
+  </tr>
+  <% end %>
+</table>
+</div>

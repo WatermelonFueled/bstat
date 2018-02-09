@@ -1,0 +1,47 @@
+/*
+body{
+	background-color: #ecd9c6;
+}
+
+h1{
+	font-family: "Verdana", Sans-serif;
+}
+h2{
+	font-family: "Verdana", Sans-serif;
+}
+
+h3{
+	font-family: "Verdana", Sans-serif;
+}
+
+th{
+    border: 1px solid black;
+
+    font-family: "Verdana", Sans-serif;
+    font-size: 10pt;
+}
+
+td{
+	  	text-align: center;
+  		text-align: center;
+  		white-space: nowrap;
+  		border-bottom: 1px solid black;
+  		font-family: "Verdana", Sans-serif;
+  		font-size: 9pt;
+}
+td.bad {
+
+  		background-color: #ff9999;
+}
+
+td.good{
+	background-color: #99ff99;
+}
+
+td.neutral{
+	background-color: #ffdd99;
+}
+ td.title{
+ 	border-bottom: 0px;
+ }
+*/
